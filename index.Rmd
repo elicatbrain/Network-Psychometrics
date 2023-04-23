@@ -1,60 +1,129 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
-date: "`r Sys.Date()`"
+title: "Network Psychometrics in R: A Guide for Behavioral and Social Scientists"
+author: "Edited by Adela-Maria Isvoranu, Sacha Epskamp, Lourens J. Waldorp, and Denny Borsboom // notes by Eli Bell"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+# url:  https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a minimal example of using the bookdown package to write a book.
   The HTML output format for this example is bookdown::gitbook,
   set in the _output.yml file.
+biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
+# Network Science in R
+##  Network Perspectives
 
-# About
+### Introduction
+- While network theory assumes that symptoms of psychopathology are causally related to one another, network models do not require this assumption to be true. 
+- Network models are comprised of statistical relations. Interpretation of these relations (i.e., as causal, correlational, etc.) depends on additional external inferences that data analytic tools themselves do not provide. 
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+### Network Approaches
+- The network approach to a given empirical domain or construct entails conceptualizing that construct as a network made up of a set of components and the relationships among those components. 
+- "Systems thinking" is the notion that network behavior is closely tied to network structure (Meadows, 2008). 
+- One may understand the construct or phenomena of interest as an emergent property, with the components of its network working together to generate phenomena that feature levels of organization. Systems thinking is sort of like a hierarchical web of components that create the shape of a phenomenon. 
 
-## Usage 
+- Analogical abduction. Conceptualizing some abstract psychological phenomena by telling a story of some real-world analogous phenomena. Establishing a correspondence between a source domain and a target domain so that we can use explanatory models from the source to better understand phenomena in the target. 
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+  - Analogy for network approach. The behavior of a flock of birds is an emergent property that arises from the interrelationships among the individual birds that belong to the flock : The characteristic behavior of persons with depression is an emergent property of the interrelationships between depressive symptoms. 
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+- To decide whether network analysis is relevant for your research question, you should systematically evaluate the applicability of central concepts of network approaches:
+  - Can you identify at least some of the important components of the phenomenon and links between them? 
+  - Do the components behave as a coherent whole? 
+  - Do the links between components offer plausible explanatory resources, based on first impression? Would a network structure make sense of a given behavior or pattern of findings? 
+  - Do you see synchronized behavior that may emerge out of a network structure? 
+  - Are there signs that the system shows behaviors that are commonly exhibited in complex systems, such as non-linear behavior in which there are sudden changes in the state of the system? 
+- When you embark on a network analysis, you view the empirical domain of interest through the lens of networks, rather than testing a specific structure and interactions between  that you hypothesize. 
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+- Examples of real-world network components: neurons; organizations; species; geographical areas; medical diseases; flora and fauna species; computers
 
-## Render book
+### Network Models
 
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
+- If you decide to proceed with the network approach to an empirical domain, you will next arrive at a (possibly rough) idea of which components would plausibly feature in a network. 
+- Three scenarios for network conceptualization: 
+  - You may have clear and observable components of a network (i.e., social network of a bunch of individuals). 
+  - You may refer to existing literature to collect information about the links between components of a construct. 
+  - Sometimes, the components are not directly observable and there's insufficient data on the links between components in past literature. 
+      - In these scenarios, network models are especially useful because you can assess how relevant components covary empirically. 
+      - This scenario represents primarily abstract entities and estimated statistical relations (as opposed to concrete things with observed links). 
+- Network Structure - correlations between variables 
+  - You may build a network structure by drawing nodes for each variable and weighted lines for each pairwise correlation between variables. 
+  - Basically, create a network structure from a correlation matrix. 
+  - Problem: many spurious links will be included in the structure 
+- Network Structure - PMRF models 
+    - Calculate the correlations between two variables while controlling for all other variables in the dataset.
+    - Absence of a link now represents conditional independence between the given variables. 
+    - Presence of an edge represents conditional dependence.
+    - aka graphical models of statistics 
+    - most common type of network model in the book!
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+- Interpretations of psychometric networks in terms of conditional associations relies only on adequcy of statistical model adequacy 
+- Interpretations of the network as a representation of the targeted attributes and of causal relations between components requires certain assumptions to be met.  
+  - ASSUMPTIONS of Network Models:
+    - Measurements of components have sufficient reliability and validity
+    - Causal relations between components are bidirectional and symmetric 
+    - The most important components of the domain are featured in the data 
+
+
+### Network Theories
+
+
+### Conclusion
+
+
+### Exercises
+
+#### Sub-sub section name {-}
+
+## Short Intro to R
+### The R environment
+### Basics of R programming
+### Basic R data structures
+### Functions and packages
+### Advanced object structures
+### Working with data in R 
+
+
+## Descriptive Analysis of Network Structures 
+### Intro
+### Complex systems and network science
+### From network science to network psychometrics 
+### Constructing networks
+### Analyzing networks
+
+
+## Constructing and Drawing Networks in qgraph
+
+## Association and Conditional Independence 
+### Intro 
+### Independence and dependence
+### Testing for statistical dependencies 
+### Where do conditional dependencies come from?
+### Conclusion
+### Exercises
+
+
+# Estimating Undirected Network Models
+## Pairwise Markov Random Fields
+
+## Estimating Network Structures using Model Selection
+
+## Network Stability, Comparison, and Replicability
+
+
+
+# Network Models for Longitudinal Data 
+## Longitudinal Design Choices: Relating Data to Analysis 
+
+## Network Estimtion from Time Series and Panel Data
+
+## Modeling Change in Networks 
+
+# Theory and Causality 
+## Causal Inference
+## Idealized Modeling of Psychologicl Dynamics 
+

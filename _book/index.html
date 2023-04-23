@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Network Psychometrics in R: A Guide for Behavioral and Social Scientists</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Network Psychometrics in R: A Guide for Behavioral and Social Scientists" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Network Psychometrics in R: A Guide for Behavioral and Social Scientists" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Edited by Adela-Maria Isvoranu, Sacha Epskamp, Lourens J. Waldorp, and Denny Borsboom // notes by Eli Bell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="estimating-undirected-network-models.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Network Science in R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#network-perspectives"><i class="fa fa-check"></i><b>1.1</b> Network Perspectives</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#network-approaches"><i class="fa fa-check"></i><b>1.1.2</b> Network Approaches</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#network-models"><i class="fa fa-check"></i><b>1.1.3</b> Network Models</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#network-theories"><i class="fa fa-check"></i><b>1.1.4</b> Network Theories</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#conclusion"><i class="fa fa-check"></i><b>1.1.5</b> Conclusion</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#exercises"><i class="fa fa-check"></i><b>1.1.6</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#short-intro-to-r"><i class="fa fa-check"></i><b>1.2</b> Short Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#the-r-environment"><i class="fa fa-check"></i><b>1.2.1</b> The R environment</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#basics-of-r-programming"><i class="fa fa-check"></i><b>1.2.2</b> Basics of R programming</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#basic-r-data-structures"><i class="fa fa-check"></i><b>1.2.3</b> Basic R data structures</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#functions-and-packages"><i class="fa fa-check"></i><b>1.2.4</b> Functions and packages</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#advanced-object-structures"><i class="fa fa-check"></i><b>1.2.5</b> Advanced object structures</a></li>
+<li class="chapter" data-level="1.2.6" data-path="index.html"><a href="index.html#working-with-data-in-r"><i class="fa fa-check"></i><b>1.2.6</b> Working with data in R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#descriptive-analysis-of-network-structures"><i class="fa fa-check"></i><b>1.3</b> Descriptive Analysis of Network Structures</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#intro"><i class="fa fa-check"></i><b>1.3.1</b> Intro</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#complex-systems-and-network-science"><i class="fa fa-check"></i><b>1.3.2</b> Complex systems and network science</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#from-network-science-to-network-psychometrics"><i class="fa fa-check"></i><b>1.3.3</b> From network science to network psychometrics</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#constructing-networks"><i class="fa fa-check"></i><b>1.3.4</b> Constructing networks</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#analyzing-networks"><i class="fa fa-check"></i><b>1.3.5</b> Analyzing networks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#constructing-and-drawing-networks-in-qgraph"><i class="fa fa-check"></i><b>1.4</b> Constructing and Drawing Networks in qgraph</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#association-and-conditional-independence"><i class="fa fa-check"></i><b>1.5</b> Association and Conditional Independence</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#intro-1"><i class="fa fa-check"></i><b>1.5.1</b> Intro</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#independence-and-dependence"><i class="fa fa-check"></i><b>1.5.2</b> Independence and dependence</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#testing-for-statistical-dependencies"><i class="fa fa-check"></i><b>1.5.3</b> Testing for statistical dependencies</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#where-do-conditional-dependencies-come-from"><i class="fa fa-check"></i><b>1.5.4</b> Where do conditional dependencies come from?</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#conclusion-1"><i class="fa fa-check"></i><b>1.5.5</b> Conclusion</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#exercises-1"><i class="fa fa-check"></i><b>1.5.6</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="estimating-undirected-network-models.html"><a href="estimating-undirected-network-models.html"><i class="fa fa-check"></i><b>2</b> Estimating Undirected Network Models</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estimating-undirected-network-models.html"><a href="estimating-undirected-network-models.html#pairwise-markov-random-fields"><i class="fa fa-check"></i><b>2.1</b> Pairwise Markov Random Fields</a></li>
+<li class="chapter" data-level="2.2" data-path="estimating-undirected-network-models.html"><a href="estimating-undirected-network-models.html#estimating-network-structures-using-model-selection"><i class="fa fa-check"></i><b>2.2</b> Estimating Network Structures using Model Selection</a></li>
+<li class="chapter" data-level="2.3" data-path="estimating-undirected-network-models.html"><a href="estimating-undirected-network-models.html#network-stability-comparison-and-replicability"><i class="fa fa-check"></i><b>2.3</b> Network Stability, Comparison, and Replicability</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="network-models-for-longitudinal-data.html"><a href="network-models-for-longitudinal-data.html"><i class="fa fa-check"></i><b>3</b> Network Models for Longitudinal Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="network-models-for-longitudinal-data.html"><a href="network-models-for-longitudinal-data.html#longitudinal-design-choices-relating-data-to-analysis"><i class="fa fa-check"></i><b>3.1</b> Longitudinal Design Choices: Relating Data to Analysis</a></li>
+<li class="chapter" data-level="3.2" data-path="network-models-for-longitudinal-data.html"><a href="network-models-for-longitudinal-data.html#network-estimtion-from-time-series-and-panel-data"><i class="fa fa-check"></i><b>3.2</b> Network Estimtion from Time Series and Panel Data</a></li>
+<li class="chapter" data-level="3.3" data-path="network-models-for-longitudinal-data.html"><a href="network-models-for-longitudinal-data.html#modeling-change-in-networks"><i class="fa fa-check"></i><b>3.3</b> Modeling Change in Networks</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="theory-and-causality.html"><a href="theory-and-causality.html"><i class="fa fa-check"></i><b>4</b> Theory and Causality</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="theory-and-causality.html"><a href="theory-and-causality.html#causal-inference"><i class="fa fa-check"></i><b>4.1</b> Causal Inference</a></li>
+<li class="chapter" data-level="4.2" data-path="theory-and-causality.html"><a href="theory-and-causality.html#idealized-modeling-of-psychologicl-dynamics"><i class="fa fa-check"></i><b>4.2</b> Idealized Modeling of Psychologicl Dynamics</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Network Psychometrics in R: A Guide for Behavioral and Social Scientists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Network Psychometrics in R: A Guide for Behavioral and Social Scientists</h1>
+<p class="author"><em>Edited by Adela-Maria Isvoranu, Sacha Epskamp, Lourens J. Waldorp, and Denny Borsboom // notes by Eli Bell</em></p>
+</div>
+<div id="network-science-in-r" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Network Science in R<a href="index.html#network-science-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="network-perspectives" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Network Perspectives<a href="index.html#network-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>While network theory assumes that symptoms of psychopathology are causally related to one another, network models do not require this assumption to be true.</li>
+<li>Network models are comprised of statistical relations. Interpretation of these relations (i.e., as causal, correlational, etc.) depends on additional external inferences that data analytic tools themselves do not provide.</li>
+</ul>
+</div>
+<div id="network-approaches" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Network Approaches<a href="index.html#network-approaches" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>The network approach to a given empirical domain or construct entails conceptualizing that construct as a network made up of a set of components and the relationships among those components.</p></li>
+<li><p>“Systems thinking” is the notion that network behavior is closely tied to network structure (Meadows, 2008).</p></li>
+<li><p>One may understand the construct or phenomena of interest as an emergent property, with the components of its network working together to generate phenomena that feature levels of organization. Systems thinking is sort of like a hierarchical web of components that create the shape of a phenomenon.</p></li>
+<li><p>Analogical abduction. Conceptualizing some abstract psychological phenomena by telling a story of some real-world analogous phenomena. Establishing a correspondence between a source domain and a target domain so that we can use explanatory models from the source to better understand phenomena in the target.</p>
+<ul>
+<li>Analogy for network approach. The behavior of a flock of birds is an emergent property that arises from the interrelationships among the individual birds that belong to the flock : The characteristic behavior of persons with depression is an emergent property of the interrelationships between depressive symptoms.</li>
+</ul></li>
+<li><p>To decide whether network analysis is relevant for your research question, you should systematically evaluate the applicability of central concepts of network approaches:</p>
+<ul>
+<li>Can you identify at least some of the important components of the phenomenon and links between them?</li>
+<li>Do the components behave as a coherent whole?</li>
+<li>Do the links between components offer plausible explanatory resources, based on first impression? Would a network structure make sense of a given behavior or pattern of findings?</li>
+<li>Do you see synchronized behavior that may emerge out of a network structure?</li>
+<li>Are there signs that the system shows behaviors that are commonly exhibited in complex systems, such as non-linear behavior in which there are sudden changes in the state of the system?</li>
+</ul></li>
+<li><p>When you embark on a network analysis, you view the empirical domain of interest through the lens of networks, rather than testing a specific structure and interactions between that you hypothesize.</p></li>
+<li><p>Examples of real-world network components: neurons; organizations; species; geographical areas; medical diseases; flora and fauna species; computers</p></li>
+</ul>
+</div>
+<div id="network-models" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Network Models<a href="index.html#network-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>If you decide to proceed with the network approach to an empirical domain, you will next arrive at a (possibly rough) idea of which components would plausibly feature in a network.</li>
+<li>Three scenarios for network conceptualization:
+<ul>
+<li>You may have clear and observable components of a network (i.e., social network of a bunch of individuals).</li>
+<li>You may refer to existing literature to collect information about the links between components of a construct.</li>
+<li>Sometimes, the components are not directly observable and there’s insufficient data on the links between components in past literature.
+<ul>
+<li>In these scenarios, network models are especially useful because you can assess how relevant components covary empirically.</li>
+<li>This scenario represents primarily abstract entities and estimated statistical relations (as opposed to concrete things with observed links).</li>
+</ul></li>
+</ul></li>
+<li>Network Structure - correlations between variables
+<ul>
+<li>You may build a network structure by drawing nodes for each variable and weighted lines for each pairwise correlation between variables.</li>
+<li>Basically, create a network structure from a correlation matrix.</li>
+<li>Problem: many spurious links will be included in the structure</li>
+</ul></li>
+<li>Network Structure - PMRF models
+<ul>
+<li>Calculate the correlations between two variables while controlling for all other variables in the dataset.</li>
+<li>Absence of a link now represents conditional independence between the given variables.</li>
+<li>Presence of an edge represents conditional dependence.</li>
+<li>aka graphical models of statistics</li>
+<li>most common type of network model in the book!</li>
+</ul></li>
+<li>Interpretations of psychometric networks in terms of conditional associations relies only on adequcy of statistical model adequacy</li>
+<li>Interpretations of the network as a representation of the targeted attributes and of causal relations between components requires certain assumptions to be met.
+<ul>
+<li>ASSUMPTIONS of Network Models:
+<ul>
+<li>Measurements of components have sufficient reliability and validity</li>
+<li>Causal relations between components are bidirectional and symmetric</li>
+<li>The most important components of the domain are featured in the data</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="network-theories" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Network Theories<a href="index.html#network-theories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="conclusion" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Conclusion<a href="index.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="exercises" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Exercises<a href="index.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sub-sub-section-name" class="section level4 unnumbered hasAnchor">
+<h4>Sub-sub section name<a href="index.html#sub-sub-section-name" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+<div id="short-intro-to-r" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Short Intro to R<a href="index.html#short-intro-to-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-r-environment" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> The R environment<a href="index.html#the-r-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="basics-of-r-programming" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Basics of R programming<a href="index.html#basics-of-r-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="basic-r-data-structures" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Basic R data structures<a href="index.html#basic-r-data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="functions-and-packages" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Functions and packages<a href="index.html#functions-and-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="advanced-object-structures" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Advanced object structures<a href="index.html#advanced-object-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="working-with-data-in-r" class="section level3 hasAnchor" number="1.2.6">
+<h3><span class="header-section-number">1.2.6</span> Working with data in R<a href="index.html#working-with-data-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="descriptive-analysis-of-network-structures" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Descriptive Analysis of Network Structures<a href="index.html#descriptive-analysis-of-network-structures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="intro" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Intro<a href="index.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="complex-systems-and-network-science" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Complex systems and network science<a href="index.html#complex-systems-and-network-science" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="from-network-science-to-network-psychometrics" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> From network science to network psychometrics<a href="index.html#from-network-science-to-network-psychometrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="constructing-networks" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Constructing networks<a href="index.html#constructing-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="analyzing-networks" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Analyzing networks<a href="index.html#analyzing-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="constructing-and-drawing-networks-in-qgraph" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Constructing and Drawing Networks in qgraph<a href="index.html#constructing-and-drawing-networks-in-qgraph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="association-and-conditional-independence" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Association and Conditional Independence<a href="index.html#association-and-conditional-independence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="intro-1" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Intro<a href="index.html#intro-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="independence-and-dependence" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Independence and dependence<a href="index.html#independence-and-dependence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="testing-for-statistical-dependencies" class="section level3 hasAnchor" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> Testing for statistical dependencies<a href="index.html#testing-for-statistical-dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="where-do-conditional-dependencies-come-from" class="section level3 hasAnchor" number="1.5.4">
+<h3><span class="header-section-number">1.5.4</span> Where do conditional dependencies come from?<a href="index.html#where-do-conditional-dependencies-come-from" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="conclusion-1" class="section level3 hasAnchor" number="1.5.5">
+<h3><span class="header-section-number">1.5.5</span> Conclusion<a href="index.html#conclusion-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="exercises-1" class="section level3 hasAnchor" number="1.5.6">
+<h3><span class="header-section-number">1.5.6</span> Exercises<a href="index.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="estimating-undirected-network-models.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
